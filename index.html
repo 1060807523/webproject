@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" href="css/right_content.css" />
+		<link href="css/index.css" />
+		<style>
+			/*制作人：赵鹏*/
+			
+			.main {
+				width: 70%;
+				margin: 0 auto;
+				/*background-color: #1987CB;*/
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			.main h3 {
+				display: inline-block;
+			}
+			
+			.main a {
+				margin-left: 1em;
+				text-decoration: none;
+				color: #1987CB;
+			}
+			
+			.main .title {
+				border-bottom: 0.3px solid rgba(0, 0, 0, 0.3);
+				padding-bottom: 1em;
+			}
+			
+			.main .left_content {
+				width: 60%;
+				float: left;
+			}
+			
+			.fenye {
+				float: right;
+			}
+			
+			.fenye span {
+				vertical-align: top;
+			}
+			
+			.arrow {
+				display: inline-block;
+				width: 18px;
+				height: 18px;
+				background: url(img/slide_swithc_2.png);
+			}
+			
+			.v_con {
+				margin-top: 20px;
+				font-size: 0;
+				/*letter-spacing:-3px;*/
+			}
+			
+			.left_content ul {
+				font-size: 0;
+			}
+			
+			.left_content ul li {
+				font-size: 15px;
+				letter-spacing: normal;
+				word-spacing: normal;
+			}
+			
+			.showing .v_con ul li {
+				display: inline-block;
+				list-style: none;
+				/*margin-right: 5px;*/
+				width: 19%;
+				margin-right: 1.25%;
+			}
+			
+			.showing .v_con ul li:last-child {
+				margin-right: 0;
+			}
+			
+			.panel1 p {
+				width: 120px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				text-align: center;
+				margin-top: 5px;
+			}
+			
+			.panel1 .news {
+				font-size: 12px;
+				color: orange;
+			}
+			
+			.panel1 img {
+				width: 100%;
+			}
+			
+			.panel1 {
+				margin-bottom: 10px;
+			}
+			
+			.showing,
+			.latest_show,
+			.sort {
+				margin-bottom: 10vh;
+			}
+			
+			.latest_show span ul * {
+				font-size: 12px;
+			}
+			
+			button {
+				background-color: #268dcd;
+				border: 0;
+				color: white;
+				height: 25px;
+				width: 100px;
+				border-radius: 2px;
+				margin: 5px auto;
+				display: block;
+			}
+			
+			.latest_show {
+				height: 500px;
+			}
+			
+			.latest_show .title {
+				padding-top: 1vh;
+			}
+			
+			.latest_panel {
+				width: 46%;
+				font-size: 0;
+				height: 220px;
+				float: left;
+				padding: 10px;
+			}
+			
+			.latest_panel .latst_info {
+				vertical-align: top;
+				display: inline-block;
+				width: 40%;
+			}
+			
+			.latest_panel .latst_info li {
+				padding: 5px;
+			}
+			
+			.latest_panel .discribe {
+				color: grey;
+				font-size: 12px;
+				height: 100px;
+			}
+			
+			.sort {
+				height: 450px;
+				clear: both;
+			}
+			
+			.sort a {
+				text-decoration: none;
+				font-size: 0.9em;
+				color: gray;
+			}
+			
+			.sort .panel1 {
+				float: left;
+				width: 19%;
+				margin-right: 1.25%;
+			}
+			
+			.sort .panel1:last-child {
+				margin-right: 0;
+			}
+			
+			.sort_content {
+				padding-top: 3vh;
+			}
+			
+			.popular {
+				clear: both;
+			}
+			
+			footer {
+				clear: both;
+				border-top: 1px dashed #eaeaea;
+				color: #999;
+				padding: 1em;
+				padding-left: 30em;
+				font-size: 0.75em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<div class="nav_wrap">
+				<div class="nav_log">
+					<a href="#">天天看美剧</a>
+				</div>
+				<div class="nav_search"><input id="search_text" type="text" name="search" placeholder="搜索片名/ 明星/ 导演/ 地区/ 年代"><input id="search_style" type="submit" value="搜索"></div>
+			</div>
+			<div class="nav_category">
+				<ul>
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+					<li>
+						<a href="#">奇幻/科幻</a>
+					</li>
+					<li>
+						<a href="#">律政/医务</a>
+					</li>
+					<li>
+						<a href="#">情景/喜剧</a>
+					</li>
+					<li>
+						<a href="#">罪案/谍战</a>
+					</li>
+					<li>
+						<a href="#">历史/剧情</a>
+					</li>
+					<li>
+						<a href="#">动作/剧情</a>
+					</li>
+					<li>
+						<a href="#">都市/情感</a>
+					</li>
+					<li>
+						<a href="#">灵异/惊悚</a>
+					</li>
+					<li>
+						<a href="#">动漫/卡通</a>
+					</li>
+					<li>
+						<a href="#">新剧预告</a>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<main class="main">
+			<aside class="left_content">
+				<div class="showing">
+					<div class="title"><label>正在热映</label>
+						<a>即将上映>></a>
+						<div class="fenye"><span>1</span><span>/2</span>
+							<a class="arrow"></a>
+							<a class="arrow" style="transform: rotateY(180deg);"></a>
+						</div>
+					</div>
+					<div class="v_con">
+						<ul>
+							<li>
+								<div class="panel1">
+									<div class="panel_content"><img src="img/CR.jpg" /></div>
+									<div class "panel_footer">
+										<p>逍遥法外第五季</p>
+										<p class="news">更新至：本季完结</p><button>立即下载 </button></div>
+								</div>
+							</li>
+							<li>
+								<div class="panel1">
+									<div class="panel_content"><img src="img/mgzs2-120x160.jpg" /></div>
+									<div class "panel_footer">
+										<p>美国众神第二季</p>
+										<p class="news">更新至：本季完结</p><button>立即下载 </button></div>
+								</div>
+							</li>
+							<li>
+								<div class="panel1">
+									<div class="panel_content"><img src="img/TWD.jpg" /></div>
+									<div class "panel_footer">
+										<p>行尸走肉第九季</p>
+										<p class="news">更新至：本季完结</p><button>立即下载 </button></div>
+								</div>
+							</li>
+							<li>
+								<div class="panel1">
+									<div class="panel_content"><img src="img/GOT.jpg" /></div>
+									<div class "panel_footer">
+										<p>权利的游戏第八季</p>
+										<p class="news">更新至：本季完结</p><button>立即下载 </button></div>
+								</div>
+							</li>
+							<li>
+								<div class="panel1">
+									<div class="panel_content"><img src="img/LXD.jpg" /></div>
+									<div class "panel_footer">
+										<p>逍遥法外第五季</p>
+										<p class="news">更新至：本季完结</p><button>立即下载 </button></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="latest_show">
+					<div class="title"><label>最新上映</label></div>
+					<div class="v_con">
+						<!-- -->
+						<div class="latest_panel">
+							<div><img src="img/CRL.jpg" /><span class="latst_info"><ul><li style="font-size: 16px;">近亲</li><li style="font-size: 12px;color: orange;">更新至：第1集</li><li style="font-size: 14px;">分类：<span style="color: #1987CB;">历史/剧情</span></li>
+								<li style="color: #1987CB;">暂无评论</li>
+								<li><label style="color: white;background-color: #9A9A9A;">下载地址</label></li>
+								</ul>
+								</span>
+							</div>
+							<div class="discribe">聪明的心理学家Mona Mirza（Archie Panjabi）在伦敦过着富足优越的生活，她是家庭的主心骨。她珍爱的兄弟在一个海外医疗慈善机构工作时惨遭谋杀，她陷入极度悲伤之中... </div>
+						</div>
+						<!-- -->
+						<div class="latest_panel">
+							<div><img src="img/LXF.jpg" /><span class="latst_info"><ul><li style="font-size: 16px;">路西法</li><li style="font-size: 12px;color: orange;">更新至：第1集</li><li style="font-size: 14px;">分类：<span style="color: #1987CB;">历史/剧情</span></li>
+								<li style="color: #1987CB;">暂无评论</li>
+								<li><label style="color: white;background-color: #9A9A9A;">下载地址</label></li>
+								</ul>
+								</span>
+							</div>
+							<div class="discribe">Netflix接盘后的《路西法》（Lucifer）新一季即该剧第4季日前正式开机，拍摄工作预计持续到12月份，本剧有望2019年回归。... </div>
+						</div>
+						<!-- -->
+						<div class="latest_panel">
+							<div><img src="img/CHA.jpg" /><span class="latst_info"><ul><li style="font-size: 16px;">心室</li><li style="font-size: 12px;color: orange;">更新至：第1集</li><li style="font-size: 14px;">分类：<span style="color: #1987CB;">历史/剧情</span></li>
+								<li style="color: #1987CB;">暂无评论</li>
+								<li><label style="color: white;background-color: #9A9A9A;">下载地址</label></li>
+								</ul>
+								</span>
+							</div>
+							<div class="discribe">这部少年向剧讲述女主Sasha Yazzie因为心脏病而获捐赠新的心脏，然而当她慢慢揭开捐赠者突然死亡的真相时，她亦发现自己开始 流露死者的性格特征，有些特征还……十分的邪恶... </div>
+						</div>
+						<!-- -->
+						<div class="latest_panel">
+							<div><img src="img/IZ.jpg" /><span class="latst_info"><ul><li style="font-size: 16px;">我是僵尸</li><li style="font-size: 12px;color: orange;">更新至：第1集</li><li style="font-size: 14px;">分类：<span style="color: #1987CB;">历史/剧情</span></li>
+								<li style="color: #1987CB;">暂无评论</li>
+								<li><label style="color: white;background-color: #9A9A9A;">下载地址</label></li>
+								</ul>
+								</span>
+							</div>
+							<div class="discribe">麦克莱弗也稍微透露最终第五季会有什么意外惊喜：“多位角色再次现身，而且是让人意想不到的方式，几乎每一集都有人回归帮助故事推进。我想观众会欣喜看到喜爱的角色回归。”... </div>
+						</div>
+					</div>
+				</div>
+				<div class="sort">
+					<div class="title"><label>美剧分类</label>
+						<a>奇幻/科幻 </a>
+						<a>律政/医务 </a>
+						<a>情景/喜剧 </a>
+						<a>罪案/谍战 </a>
+						<a>历史/剧情 </a>
+						<a>动作/战争 </a>
+						<a>灵异/惊悚</a>
+					</div>
+					<div class="sort_content">
+						<div>
+							<div class="panel1">
+								<div class="panel_content"><img src="img/mgzs2-120x160.jpg" /></div>
+								<div class "panel_footer">
+									<p>美国众神第二季</p>
+									<p class="news">更新至：本季完结</p>
+								</div>
+							</div>
+							<div class="panel1">
+								<div class="panel_content"><img src="img/GOT.jpg" /></div>
+								<div class "panel_footer">
+									<p>权利的游戏第八季</p>
+									<p class="news">更新至：本季完结</p>
+								</div>
+							</div>
+							<div class="panel1">
+								<div class="panel_content"><img src="img/LXF2.jpg" /></div>
+								<div class "panel_footer">
+									<p>路西法第四季</p>
+									<p class="news">更新至：本季完结</p>
+								</div>
+							</div>
+							<div class="panel1">
+								<div class="panel_content"><img src="img/SO.jpg" /></div>
+								<div class "panel_footer">
+									<p>密令</p>
+									<p class="news">更新至：本季完结</p>
+								</div>
+							</div>
+							<div class="panel1">
+								<div class="panel_content"><img src="img/IN.jpg" /></div>
+								<div class "panel_footer">
+									<p>渗透</p>
+									<p class="news">更新至：本季完结</p>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="panel1">
+								<div class="panel_content"><img src="img/CS.jpg" /></div>
+								<div class "panel_footer">
+									<p>城堡石第二季</p>
+									<p class="news">更新至：本季完结</p>
+								</div>
+							</div>
+							<div class="panel1">
+								<div class="panel_content"><img src="img/MM.jpg" /></div>
+								<div class "panel_footer">
+									<p>魔法师第四季</p>
+									<p class="news">更新至：本季完结</p>
+								</div>
+							</div>
+							<div class="panel1">
+								<div class="panel_content"><img src="img/JJ.jpg" /></div>
+								<div class "panel_footer">
+									<p>杰西卡琼斯第三季</p>
+									<p class="news">更新至：本季完结</p>
+								</div>
+							</div>
+							<div class="panel1">
+								<div class="panel_content"><img src="img/EH.jpg" /></div>
+								<div class "panel_footer">
+									<p>地球百子</p>
+									<p class="news">更新至：本季完结</p>
+								</div>
+							</div>
+							<div class="panel1">
+								<div class="panel_content"><img src="img/WK.jpg" /></div>
+								<div class "panel_footer">
+									<p>斗篷与匕首</p>
+									<p class="news">更新至：本季完结</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<aside class="right_content">
+				<div class="lab">
+					<a style="display: inline-block;" href="login.html">登录 </a>
+					&ensp;
+					<a style="display: inline-block;" href="login.html"> 注册</a>
+				</div>
+				<div class="lab">
+					<h4>网站公告......</h4>
+					<a>2019美剧新剧&回归时间</a>
+					<a>留言板</a>
+					<a>美剧更新时间表</a>
+				</div>
+				<div class="week">
+					<div class="title"><label>每周更新</label></div>
+					<div class="option">
+						<ul>
+							<li>周一</li>
+							<li>周二</li>
+							<li>周三</li>
+							<li>周四</li>
+							<li>周五</li>
+							<li>周六</li>
+							<li>周日</li>
+						</ul>
+					</div>
+					<div class="op_content">
+						<ul>
+							<li>国务卿女士</li>
+							<li>巴里</li>
+							<li>亿万</li>
+							<li>杀死伊芙</li>
+							<li>超女</li>
+							<li>红线</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="last_op">
+					<div class="title"><label>最新美剧</label></div>
+					<div class="op_content">
+						<ul>
+							<li>权利的游戏第八季<label>[第4集]</label></li>
+							<li>路西法第四季<label>[本季完结]</label></li>
+							<li>心室第一季<label>[本季完结]</label></li>
+							<li>近亲<label>[第1集]</label></li>
+							<li>我是僵尸第五季<label>[第1集]</label></li>
+							<li>切尔诺贝利<label>[第1集]</label></li>
+							<li>奇怪异镇<label>[本季完结]</label></li>
+							<li>诈欺担保人第三季<label>[第1集]</label></li>
+							<li>侥幸<label>[第3集]</label></li>
+							<li>西班牙公主<label>[第1集]</label></li>
+						</ul>
+					</div>
+				</div>
+				<div class="pro_lab">
+					<div class="title"><label>热门标签</label></div>
+					<div class="pro_lab_content">
+						<h5 style="margin-bottom: 5px;">电视台</h5>
+						<div>
+							<span>ABC</span>
+							<span>CBS</span>
+							<span>BBC</span>
+							<span>NBS</span>
+							<span>FOX</span>
+							<span>CW</span>
+							<span>HBO</span>
+							<span>Netflix</span>
+							<span>Showtime</span>
+							<span>NBS</span>
+							<span>ABC</span>
+							<span>CBS</span>
+							<span>BBC</span>
+							<span>NBS</span>
+							<span>FOX</span>
+							<span>CW</span>
+							<span>HBO</span>
+							<span>Netflix</span>
+							<span>Showtime</span>
+							<span>NBS</span><span>ABC</span>
+							<span>CBS</span>
+							<span>BBC</span>
+							<span>NBS</span>
+							<span>FOX</span>
+							<span>CW</span>
+							<span>HBO</span>
+							<span>Netflix</span>
+							<span>Showtime</span>
+							<span>NBS</span>
+							<span>ABC</span>
+							<span>CBS</span>
+							<span>BBC</span>
+							<span>NBS</span>
+							<span>FOX</span>
+							<span>CW</span>
+							<span>HBO</span>
+							<span>Netflix</span>
+						</div>
+						<h5 style="margin-bottom: 5px;">电视剧</h5>
+						<div>
+							<span>辛普森一家</span>
+							<span>南方公园</span>
+							<span>历史频道</span>
+							<span>犯罪现场调查</span>
+							<span>犯罪心理</span>
+							<span>实习医生格蕾</span>
+							<span>邪恶力量</span>
+							<span>生活大爆炸</span>
+							<span>好汉两个半</span>
+							<span>识骨寻踪</span>
+							<span>神秘博士</span>
+							<span>X档案</span>
+							<span>超人前传</span>
+							<span>老友记</span>
+							<span>权利的游戏</span>
+						</div>
+					</div>
+			</aside>
+		</main>
+		<footer>
+			制作人：赵鹏 学号：201711104063
+		</footer>
+	</body>
+
+</html>
