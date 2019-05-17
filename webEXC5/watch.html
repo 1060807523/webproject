@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" href="css/right_content.css" />
+		<link href="css/index.css" />
+		<style>
+			/*制作人：赵鹏*/
+			
+			.main .left_content {
+				width: 60%;
+				float: left;
+			}
+			
+			.left_content {
+				clear: both;
+				height: 100%;
+				border-style: solid;
+				border-radius: 5px;
+				border-width: 1px;
+				border-color: #dbdbdb;
+			}
+			
+			footer {
+				clear: both;
+				border-top: 1px dashed #eaeaea;
+				color: #999;
+				padding: 1em;
+				padding-left: 30em;
+				font-size: 0.75em;
+			}
+			
+			table {
+				padding-bottom: 10px;
+			}
+			
+			.left_header {
+				font-size: 1.5em;
+				font-family: "微软雅黑";
+				text-shadow: 1px 0px 2px rgba(0, 0, 0, 0.5);
+			}
+			
+			.dplayer-video {
+				width: 100%;
+			}
+			
+			.login_panel {
+				padding-bottom: 0;
+			}
+			
+			table {
+				padding-bottom: 10px;
+			}
+			
+			.left_main_tm {
+				color: #072;
+				font-size: 16px;
+				padding: 5px;
+			}
+			
+			.left_main_tm td {
+				padding: 10px 0px 10px 15px;
+			}
+			
+			.left_main_py td a {
+				margin-left: 5px;
+				padding: 2px 5px;
+				border-style: solid;
+				border-radius: 2px;
+				border-width: 1px;
+				border-color: #ccddeb;
+				text-decoration: none;
+				color: #369;
+			}
+			
+			.left_main_py td {
+				padding-left: 6px;
+			}
+			
+			.left_header {
+				padding-left: 0;
+			}
+			
+			.left_header h3 {
+				line-height: 2em;
+				width: 90%;
+				margin: 0 auto;
+				/*margin-bottom: 10px;*/
+			}
+			
+			.left_header .divied {
+				border-radius: 2px;
+				width: 90%;
+				margin: 0 auto;
+				border: 1px solid #dbdbdb;
+			}
+			
+			.left_content {
+				padding-bottom: 20px;
+			}
+			
+			.v_con {
+				font-size: 0;
+				/*letter-spacing:-3px;*/
+			}
+			
+			.left_content ul {
+				font-size: 0;
+			}
+			
+			.left_content ul li {
+				font-size: 15px;
+				letter-spacing: normal;
+				word-spacing: normal;
+			}
+			
+			.v_con ul li {
+				display: inline-block;
+				list-style: none;
+				/*margin-right: 5px;*/
+				width: 19%;
+				margin-right: 1.25%;
+			}
+			
+			.v_con ul li:last-child {
+				margin-right: 0;
+			}
+			
+			.panel1 p {
+				width: 120px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				text-align: center;
+				margin-top: 5px;
+			}
+			
+			.panel1 .news {
+				font-size: 12px;
+				color: orange;
+			}
+			
+			.panel1 img {
+				width: 100%;
+			}
+			
+			.panel1 {
+				margin-bottom: 10px;
+			}
+			
+			.chose {
+				margin: 5px auto;
+				width: 90%;
+				border-top: 1px solid #dbdbdb;
+				border-bottom: 1px solid #dbdbdb;
+			}
+			
+			.chose label {
+				padding-left: 1em;
+				color: ;
+			}
+			
+			.chose span {
+				color: #BC0808;
+			}
+			
+			.chose {
+				margin-top: 30px;
+				line-height: 1.9em;
+			}
+			
+			.other_interst {
+				margin: 0 auto;
+				width: 90%;
+			}
+			
+			.other_interst {
+				margin-top: 20px;
+				border-top: 1px solid #dbdbdb;
+				border-bottom: 1px solid #dbdbdb;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<div class="nav_wrap">
+				<div class="nav_log">
+					<a href="#">天天看美剧</a>
+				</div>
+				<div class="nav_search"><input id="search_text" type="text" name="search" placeholder="搜索片名/ 明星/ 导演/ 地区/ 年代"><input id="search_style" type="submit" value="搜索"></div>
+			</div>
+			<div class="nav_category">
+				<ul>
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+					<li>
+						<a href="#">奇幻/科幻</a>
+					</li>
+					<li>
+						<a href="#">律政/医务</a>
+					</li>
+					<li>
+						<a href="#">情景/喜剧</a>
+					</li>
+					<li>
+						<a href="#">罪案/谍战</a>
+					</li>
+					<li>
+						<a href="#">历史/剧情</a>
+					</li>
+					<li>
+						<a href="#">动作/剧情</a>
+					</li>
+					<li>
+						<a href="#">都市/情感</a>
+					</li>
+					<li>
+						<a href="#">灵异/惊悚</a>
+					</li>
+					<li>
+						<a href="#">动漫/卡通</a>
+					</li>
+					<li>
+						<a href="#">新剧预告</a>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<main class="main">
+			<div class="nav">
+				<strong>
+					<a class="nav_img" title="返回主页"></a>
+				</strong>
+				<ul>
+					<li>
+						<a id="nav_i" href="#">奇幻/科幻</a>
+					</li>
+				</ul>
+				<a id="nav_i">权利的游戏</a>
+			</div>
+
+			<aside class="left_content">
+				<div class="left_header">
+					<h3>权力的游戏第八季第01集在线观看</h3>
+					<div class="divied"></div>
+				</div>
+				<div class="login_panel">
+					<video class="dplayer-video" controls="controls" src="media/Doom.Patrol.S01E04.WEB.720P.mp4">
+					</video>
+
+					<table border="0">
+						<tbody>
+							<tr class="left_main_tm">
+								<td colspan="4">源一···········</td>
+							</tr>
+							<tr class="left_main_py">
+								<td>
+									<a href="#">01集</a>
+								</td>
+								<td>
+									<a href="#">02集</a>
+								</td>
+								<td>
+									<a href="#">03集</a>
+								</td>
+								<td>
+									<a href="#">04集</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table border="0">
+						<tbody>
+							<tr class="left_main_tm">
+								<td colspan="4">源二···········</td>
+							</tr>
+							<tr class="left_main_py">
+								<td>
+									<a href="#">01集</a>
+								</td>
+								<td>
+									<a href="#">02集</a>
+								</td>
+								<td>
+									<a href="#">03集</a>
+								</td>
+								<td>
+									<a href="#">04集</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table border="0">
+						<tbody>
+							<tr class="left_main_tm">
+								<td colspan="4">源一m3u8···········</td>
+							</tr>
+							<tr class="left_main_py">
+								<td>
+									<a href="#">01集</a>
+								</td>
+								<td>
+									<a href="#">02集</a>
+								</td>
+								<td>
+									<a href="#">03集</a>
+								</td>
+								<td>
+									<a href="#">04集</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table border="0">
+						<tbody>
+							<tr class="left_main_tm">
+								<td colspan="4">源二m3u8···········</td>
+							</tr>
+							<tr class="left_main_py">
+								<td>
+									<a href="#">01集</a>
+								</td>
+								<td>
+									<a href="#">02集</a>
+								</td>
+								<td>
+									<a href="#">03集</a>
+								</td>
+								<td>
+									<a href="#">04集</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="chose">
+					<div class="pre_op">
+						<label>上一篇：</label>
+						<span>路西法第四季全集Lucifer迅雷下载</span>
+					</div>
+					<div class="next_op">
+						<label>下一篇：</label>
+						<span>神盾局特工第六季全集Agents of S.H.I.E.L.D.迅雷下载</span>
+					</div>
+				</div>
+				<div class="other_interst">
+					<p style="font-weight: 600;line-height: 2em;">您可能还会对这些美剧感兴趣</p>
+					<div class="v_con">
+						<ul>
+							<li>
+								<div class="panel1">
+									<div class="panel_content"><img src="img/CR.jpg" /></div>
+									<div class "panel_footer">
+										<p>逍遥法外第五季</p>
+										<p class="news">更新至：本季完结</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="panel1">
+									<div class="panel_content"><img src="img/mgzs2-120x160.jpg" /></div>
+									<div class "panel_footer">
+										<p>美国众神第二季</p>
+										<p class="news">更新至：本季完结</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="panel1">
+									<div class="panel_content"><img src="img/TWD.jpg" /></div>
+									<div class "panel_footer">
+										<p>行尸走肉第九季</p>
+										<p class="news">更新至：本季完结</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="panel1">
+									<div class="panel_content"><img src="img/GOT.jpg" /></div>
+									<div class "panel_footer">
+										<p>权利的游戏第八季</p>
+										<p class="news">更新至：本季完结</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="panel1">
+									<div class="panel_content"><img src="img/LXD.jpg" /></div>
+									<div class "panel_footer">
+										<p>逍遥法外第五季</p>
+										<p class="news">更新至：本季完结</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+			<aside class="right_content">
+				<div class="lab">
+					<a style="display: inline-block;" href="login.html">登录 </a>
+					&ensp;
+					<a style="display: inline-block;" href="login.html"> 注册</a>
+				</div>
+				<div class="lab">
+					<h4>网站公告......</h4>
+					<a>2019美剧新剧&回归时间</a>
+					<a href="liveMessage.html">留言板</a>
+					<a>美剧更新时间表</a>
+				</div>
+				<div class="week">
+					<div class="title"><label>每周更新</label></div>
+					<div class="option">
+						<ul>
+							<li>周一</li>
+							<li>周二</li>
+							<li>周三</li>
+							<li>周四</li>
+							<li>周五</li>
+							<li>周六</li>
+							<li>周日</li>
+						</ul>
+					</div>
+					<div class="op_content">
+						<ul>
+							<li>国务卿女士</li>
+							<li>巴里</li>
+							<li>亿万</li>
+							<li>杀死伊芙</li>
+							<li>超女</li>
+							<li>红线</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="last_op">
+					<div class="title"><label>最新美剧</label></div>
+					<div class="op_content">
+						<ul>
+							<li>权利的游戏第八季<label>[第4集]</label></li>
+							<li>路西法第四季<label>[本季完结]</label></li>
+							<li>心室第一季<label>[本季完结]</label></li>
+							<li>近亲<label>[第1集]</label></li>
+							<li>我是僵尸第五季<label>[第1集]</label></li>
+							<li>切尔诺贝利<label>[第1集]</label></li>
+							<li>奇怪异镇<label>[本季完结]</label></li>
+							<li>诈欺担保人第三季<label>[第1集]</label></li>
+							<li>侥幸<label>[第3集]</label></li>
+							<li>西班牙公主<label>[第1集]</label></li>
+						</ul>
+					</div>
+				</div>
+				<div class="pro_lab">
+					<div class="title"><label>热门标签</label></div>
+					<div class="pro_lab_content">
+						<h5 style="margin-bottom: 5px;">电视台</h5>
+						<div>
+							<span>ABC</span>
+							<span>CBS</span>
+							<span>BBC</span>
+							<span>NBS</span>
+							<span>FOX</span>
+							<span>CW</span>
+							<span>HBO</span>
+							<span>Netflix</span>
+							<span>Showtime</span>
+							<span>NBS</span>
+							<span>ABC</span>
+							<span>CBS</span>
+							<span>BBC</span>
+							<span>NBS</span>
+							<span>FOX</span>
+							<span>CW</span>
+							<span>HBO</span>
+							<span>Netflix</span>
+							<span>Showtime</span>
+							<span>NBS</span><span>ABC</span>
+							<span>CBS</span>
+							<span>BBC</span>
+							<span>NBS</span>
+							<span>FOX</span>
+							<span>CW</span>
+							<span>HBO</span>
+							<span>Netflix</span>
+							<span>Showtime</span>
+							<span>NBS</span>
+							<span>ABC</span>
+							<span>CBS</span>
+							<span>BBC</span>
+							<span>NBS</span>
+							<span>FOX</span>
+							<span>CW</span>
+							<span>HBO</span>
+							<span>Netflix</span>
+						</div>
+						<h5 style="margin-bottom: 5px;">电视剧</h5>
+						<div>
+							<span>辛普森一家</span>
+							<span>南方公园</span>
+							<span>历史频道</span>
+							<span>犯罪现场调查</span>
+							<span>犯罪心理</span>
+							<span>实习医生格蕾</span>
+							<span>邪恶力量</span>
+							<span>生活大爆炸</span>
+							<span>好汉两个半</span>
+							<span>识骨寻踪</span>
+							<span>神秘博士</span>
+							<span>X档案</span>
+							<span>超人前传</span>
+							<span>老友记</span>
+							<span>权利的游戏</span>
+						</div>
+					</div>
+			</aside>
+		</main>
+		<footer>
+			制作人：赵鹏 学号：201711104063
+		</footer>
+	</body>
+
+</html>

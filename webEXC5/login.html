@@ -9,9 +9,28 @@
 		<link rel="stylesheet" href="css/index.css" />
 		<link rel="stylesheet" href="css/login.css" />
 		<style>
-			button{
+			button {
 				height: 30px;
 				line-height: 30px;
+			}
+			
+			.left_content {
+				clear: both;
+				height: 700px;
+				border-style: solid;
+				border-radius: 5px;
+				border-width: 1px;
+				border-color: #dbdbdb;
+			}
+			.nav{
+				margin-bottom: 10px;
+			}
+			.login_panel{
+				display: block;
+				margin: 0 auto;
+				margin-top: 50px;
+				width: 80%;
+				padding-bottom: 30%;
 			}
 		</style>
 	</head>
@@ -63,6 +82,14 @@
 			</div>
 		</header>
 		<main class="main">
+			<div class="nav">
+				<strong>
+					<a class="nav_img" title="返回主页"></a>
+				</strong>
+				<a id="nav_i">天天看美剧用户登录</a>
+			</div>
+			<aside class="left_content">
+
 				<div class="login_panel">
 					<div class="login_panel_header">
 						登录
@@ -71,33 +98,32 @@
 						<form>
 							<div class="input-group">
 								<label>用户名：</label>
-								<input type="text" placeholder="用户名" />
+								<input type="text" id="uID" placeholder="用户名" />
 							</div>
 							<div class="input-group">
 								<label>密码：</label>
-								<input type="text" placeholder="密码" />
+								<input type="text" id="uPassword" placeholder="密码" />
 							</div>
 							<div class="button-group">
-								<button> 登录</button>
+								<button id="login"> 登录</button>
 							</div>
 						</form>
 					</div>
 					<div class="login_panel_footer">
 						<input type="checkbox" name="" id="" value="" />记住我
-						<a>忘记密码</a>
+						<a href="getPassword.html">忘记密码</a>
 						<a>用户注册</a>
 					</div>
 				</div>
-				
-				
-				<aside class="right_content">
+			</aside>
+			<aside class="right_content">
 				<div class="lab">
 					<a>本站使用指南</a>
 				</div>
 				<div class="lab">
 					<h4>网站公告......</h4>
 					<a>2019美剧新剧&回归时间</a>
-					<a>留言板</a>
+					<a href="liveMessage.html">留言板</a>
 					<a>美剧更新时间表</a>
 				</div>
 				<div class="pro_lab">
@@ -165,5 +191,20 @@
 			</aside>
 		</main>
 	</body>
+	<script>
+		if(localStorage.userId !=undefined&&localStorage.userId !=""&&
+			localStorage.userPassword !=undefined&&localStorage.userPassword!=""){
+				document.getElementById("uID").value=localStorage.userId;
+				document.getElementById("uPassword").value = localStorage.userPassword;
+			}
+		
+		var btn = document.getElementById("login");
+		btn.addEventListener("click",function(e){
+			var u = document.getElementById("uID");
+			var p = document.getElementById("uPassword");
+			localStorage.userId = u.value;
+			localStorage.userPassword = p.value;
+		})
+	</script>
 
 </html>
